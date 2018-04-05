@@ -1,0 +1,71 @@
+
+
+<h3 style="margin-top:30px;margin-bottom:30px">
+ Employee Details:
+</h3>
+
+<table class="table table-bordered table-hover"  >
+
+  <tr align="center">
+    <th >Employee Id </th>
+    <th>Name </th>
+    <th>Designation </th>
+    <th>DOJ </th>
+    <th>Phno </th>
+    <th>Skills </th>
+    <th>Action </th>
+  </tr>
+  <tr *ngFor="let E of Emp; let i=index" align="center">
+    <td >{{E.Id}}</td>
+    <td>{{E.Name}}</td>
+    <td>{{E.Designation}}</td>
+    <td>{{E.DOJ}}</td>
+    <td>{{E.Phno}}</td>
+    <td>{{E.Skills}}</td>
+    <td>
+      <button (click)="editEmployee(E.Id)"  class="btn btn-md btn-Primary" data-toggle="modal" data-target="#editModal">Edit</button>
+      <button (click)="deleteEmployee(i)"  class="btn btn-md btn-danger">Delete</button>
+    </td>
+  </tr>
+</table>
+
+<button type="button" class="btn btn-md btn-info button" data-toggle="modal" data-target="#addModal" > Add </button>
+
+<div class="modal fade" id="addModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content"style="background-color: lightblue;">
+       <div class="modal-body">   
+          <form  class="formlayout" #Add="ngForm" (ngSubmit)="addEmployee(Add.value);Add.reset()">
+            <label>Employee Id: </label> <input type="text" name="Id" ngModel>
+            <label>Name: </label> <input type="text" name="Name" ngModel>
+            <label>Designation: </label> <input type="text" name="Designation" ngModel>
+            <label>DOJ: </label> <input type="text" name="DOJ" ngModel>
+            <label>Phone: </label> <input type="text" name="Phno" ngModel>
+            <label>Skills: </label> <input type="text" name="Skills" ngModel>
+            <button type="submit"  class="btn btn-md btn-success ">Submit</button>
+            <button type="button"  class="btn btn-md btn-warning " data-dismiss="modal" >Cancel</button>
+          </form>
+        </div> 
+      </div>
+   </div>
+  </div>  
+
+  <div class="modal fade" id="editModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: lightblue;">
+       <div class="modal-body">  
+          <form  class="formlayout" #Edit="ngForm" (ngSubmit)="updateEmployee(Edit.value)">
+            <label>Employee Id:</label> <input type="text" name="Id" [(ngModel)]="data.Id">
+            <label>Name: </label> <input type="text" name="Name" [(ngModel)]="data.Name">
+            <label>Designation: </label> <input type="text" name="Designation" [(ngModel)]="data.Designation">
+            <label>DOJ:</label> <input type="text" name="DOJ" [(ngModel)]="data.DOJ">
+            <label>Phone: </label> <input type="text" name="Phno" [(ngModel)]="data.Phno">
+            <label>Skills: </label> <input type="text" name="Skills" [(ngModel)]="data.Skills">
+            <button  class="btn btn-md btn-success ">Submit</button>
+            <button type="button"  class="btn btn-md btn-warning " data-dismiss="modal">Cancel</button>
+          </form>
+        </div> 
+      </div>
+     </div>
+  </div>
+ 

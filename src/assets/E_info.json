@@ -1,0 +1,26 @@
+{
+ "Emp":[ {
+    "Id":1,
+    "Name":"roopa",
+    "Designation":"Intern",
+    "DOJ":"2-2-2018",
+    "Phno":"9999",
+    "Skills":"JS"
+  },
+  {
+    "Id":2,
+    "Name":"Hamini",
+    "Designation":"Intern",
+    "DOJ":"2-2-2018",
+    "Phno":"9999",
+    "Skills":"JS"
+  },
+  {
+    "Id":3,
+    "Name":"Sushmitha",
+    "Designation":"Intern",
+    "DOJ":"2-2-2018",
+    "Phno":"9999",
+    "Skills":"JS"
+  }]
+}
